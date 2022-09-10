@@ -30,7 +30,7 @@ public class AxeTest {
     public void testIfWeaponLosesDurabilityAfterEachAttack() {
 
         axe.attack(dummy);
-        Assert.assertEquals(99, axe.getDurabilityPoints());
+        Assert.assertEquals(DURABILITY - 1, axe.getDurabilityPoints());
     }
 
     @Test(expected = IllegalStateException.class)

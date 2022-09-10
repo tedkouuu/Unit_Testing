@@ -16,6 +16,7 @@ public class DummyTest {
     public static final int DEAD_DUMMY_EXP = 100;
     public static final int ALIVE_DUMMY_HEALTH = 50;
     public static final int ALIVE_DUMMY_EXP = 50;
+    public static final int TAKE_ATTACK = 10;
 
     private Dummy aliveDummy;
     private Dummy deadDummy;
@@ -31,15 +32,15 @@ public class DummyTest {
     @Test
     public void testIfDummyLosesHealthWhenAttacked() {
 
-        aliveDummy.takeAttack(10);
+        aliveDummy.takeAttack(TAKE_ATTACK);
 
-        Assert.assertEquals(40, aliveDummy.getHealth());
+        Assert.assertEquals(ALIVE_DUMMY_HEALTH - TAKE_ATTACK, aliveDummy.getHealth());
     }
 
     @Test(expected = IllegalStateException.class)
     public void testIfDeadDummyThrowsExceptionWhenAttacked() {
 
-        deadDummy.takeAttack(10);
+        deadDummy.takeAttack(TAKE_ATTACK);
     }
 
     @Test
@@ -47,7 +48,7 @@ public class DummyTest {
 
         deadDummy.giveExperience();
 
-        Assert.assertEquals(100, deadDummy.giveExperience());
+        Assert.assertEquals(DEAD_DUMMY_EXP, deadDummy.giveExperience());
     }
 
     @Test(expected = IllegalStateException.class)
