@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 // USE ASSERT.assertEquals - GIVES MORE INFO WHEN THERE IS AN ERROR
 // DON'T USE MAGIC NUMBERS, IT CAN LEAD TO WRONG BEHAVIOR
+// USE DESCRIPTIVE NAMES FOR THE METHOD NAMES
 
 public class AxeTest {
 
