@@ -20,7 +20,7 @@ public class AxeTest {
     private Axe axe;
     private Dummy dummy;
 
-    @Before
+    @Before // Before every test, I initialize new Axe and new Dummy
     public void setUp() {
         this.axe = new Axe(ATTACK, DURABILITY);
         this.dummy = new Dummy(HEALTH, EXP);
