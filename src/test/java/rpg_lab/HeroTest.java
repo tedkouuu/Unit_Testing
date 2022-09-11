@@ -75,9 +75,11 @@ public class HeroTest { // I USE DEPENDENCY INJECTION SO I CAN TEST THE CODE EAS
         Target target = Mockito.mock(Target.class);
 
         Mockito.when(target.isDead()).thenReturn(true); // This is a setup of the method
-        Mockito.when(target.giveExperience()).thenReturn(0);
+        Mockito.when(target.giveExperience()).thenReturn(200);
 
-        assertEquals(0, hero.getExperience());
+        hero.attack(target);
+
+        assertEquals(200, hero.getExperience());
     }
 }
 
